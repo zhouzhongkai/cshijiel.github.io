@@ -1,1 +1,45 @@
-<h1>Roc</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="item">
+					<h1>陈鹏<small>2014年11月7日 17:41:03</small></h1>
+					<p class="lead">整个过程：</p>
+					<ol>
+						<li>在本地创建git版本库</li>
+						<li>在github上创建空库，类似于username.github.io</li>
+						<li>
+							在本地创建ssh-keygen，如下:<br>
+							<pre>ssh-keygen -t rsa -C "user.email"</pre>
+							得到ssh-key后填入github.com,<br>
+							验证:<br>
+							<pre>ssh -T git@github.com</pre>
+						</li>
+						<li>在本地执行<pre>git clone ...</pre>克隆整个项目</li>
+						<li>在本地编辑修改/增加 <code>index.html</code>文件，</li>
+						<li>提交<pre>git push origin master</pre></li>
+						<li>以后更新先使用<pre>git fetch origin master</pre>然后本地编辑修改提交后再<code>push</code>到远程库</li>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
