@@ -38,6 +38,57 @@
 					<a href="http://blog.csdn.net/hudashi/article/details/7664457" class="btn btn-primary" target="_blank">Git fetch和git pull的区别</a>	
 				</div>
 				<!--end-->
+
+				<!--begin-->
+				<div class="item">
+					<h1>周忠凯2014年11月7日</h1>
+					<p class="lead"></p>
+					<ol>
+						<li>了解和使用Git<br>
+Git是分布式的版本控制工具，可以指定和若干不同的远端代码仓库进行交互，就可以在同一个项目中，<br>
+分别和不同工作小组的人相互协作。Git 只关心文件数据的整体是否发生变化，Git 不会保存前后变化的差异数据。<br>
+Git 更像是把变化的文件作快照后，记录在一个微型的文件系统中。<br></li>
+						<li>在学习中所使用和实验的指令及对其的理解：<br>
+1 git config --global user.name "zhouzhongkai"<br>
+  git config --global user.email zhouzhongkai@gyyx.cn<br>
+  判断权限问题，commit其他任何的人的版本库 没有验证 不就提交上去了吗...<br>
+2 git config --list<br>
+  检查配置信息<br>
+3 git init<br>
+  初始化，并且生成一个.git目录<br>
+4 ssh-keygen -t rsa -C “zhouzhongkai@gyyx.cn”<br>
+  获取ssh key，发现的问题：版本库的SSH方式和HTTPS方式是不同的，认证机制不同。<br>
+当建立了本机密钥之后，使用ssh方式实际上是不需要再次认证的，而https则每次需要输入密码 。<br>
+5 git clone [url] 服务器上有的数据克隆之后本地都有<br>
+6 git add + 想要提交的文件名，把数据暂存<br>
+7 git commit -m "注释的一些信息" 如果失败会回滚到add之前，成功推送修改到本地库中；<br>
+8 git push  将本地仓库修改推送到服务器上的仓库中<br>
+9 push与pull <br>
+ git push origin branch_name;本地到服务器<br>
+ git pull origin branch_name;服务器到本地<br>
+10 git branch branch_name 新建分支 checkout切换<br>
+11 分支 指向commit对象的可变指针 轻量 廉价 开发遇到问题会很方便<br></li>
+操作过程： 1 创建库zhouzhongkai.github.io<br>
+          2 创建index.html<br>
+          3  git remote add zzk https://github.com/zhouzhongkai/zhouzhongkai.github.io <br>
+             放在远程库zzk中<br>
+          4  git remote 列出库<br>
+          5  git status 查看改动<br>
+          6  git add . 把index.html文件暂存<br>
+          7  git commit -m "first" 推送到本地的库<br>
+          8  git push zzk master 推送到服务器上的库<br>
+						</li>
+						<li>经过一系列的zhouzhongkai.github.io 404后<br>
+						用陈鹏的了<br>
+						git clone http://github.com/cshijiel.github.io.git<br>
+                                                     remote add push之后应该能加进去了<br>
+
+</li>
+					</ol>
+					
+				</div>
+				<!--end-->
+
 			</div>
 		</div>
 	</div>
