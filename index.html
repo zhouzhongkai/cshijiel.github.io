@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 	<meta charset="UTF-8">
@@ -37,6 +37,36 @@
 						</li>
 					</ol>
 					<a href="http://blog.csdn.net/hudashi/article/details/7664457" class="btn btn-primary" target="_blank">Git fetch和git pull的区别</a>	
+				</div>
+				<div class="item">
+					<h1>马涛<small>2014年11月7日 19:20:03</small></h1>
+					<p class="lead">整个过程：</p>
+					<ol>
+						
+						<li>在本地创建git版本库</li>
+						<li>在本地工作空间中修改文件后add到暂存区 然后commit到master分支上</li>
+						<li>查看版本库中的状态 </li>
+						<pre>git status</pre>
+						<li>查看文件状态 </li>
+						<pre>git giff</pre>
+						<li>显示最近提交的文件状态</li>
+						<pre>git log</pre>
+						<li>通过SSH协议连接GitHub，获取SSHKey <li>
+							<pre>ssh-keygen -t rsa -C"自己的邮箱地址"</pre>
+							获取后根据提示在Users/user中找到SSHKey 在GitHub中获得相应远程版本库的认可
+						<li>关联本地版本库与远程版本库</li>
+						<pre>git remote add origin 通常是SSH协议的版本库的地址</pre>
+						<li>把本地版本库中的内容推送到远程版本库master分支上</li>
+						<pre>git push -u origin master 一般只有在第一次推送的时候才使用-u连接下master分支</pre>
+						<li>从远程版本库中clone所有内容</li>
+						<pre>git clone "远程版本库的地址"</pre>
+						<li>创建分支</li>
+						<pre>git checkout -b 分支名称</pre>
+						<li>查看所有分支</li>
+						<pre>git branch </pre>
+						<li>切换到某一分支</li>
+						<pre>git checkout 分支名称</pre>
+						<li>将分支合并到现处分支</li>
 				</div>
 			</div>
 		</div>
