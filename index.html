@@ -218,7 +218,65 @@ Git 更像是把变化的文件作快照后，记录在一个微型的文件系�
 </pre>
 				</div >
 				
+				<!--begin-->
+				<div class="item">
+					<h1>周忠凯<small>2014年11月10日 16:30</small></h1>
+					<p class="lead">学习内容：</p>
+					<ol>
+						<li>1http是属于应用层的面向对象协议<br>
+                                                      <pre>无连接：每次连接只处理一个请求，服务器处理完客户的请求，接到客户的应答后，断开连接。
+                                                       </pre>
+                                                      <pre>无状态：http协议是无状态协议，对任何事物没有记忆能力。后续处理需要前面的信息，信息要重传，传送的数据量很大。另一方面，服务器不需要先前的信息时应答很快。
+                                                        </pre>
+                                                </li>
+						<li>.http中的get post delete put <br>
+                                                     get（查） post（改） put(增） delete（删）
+                                                      <pre> get：获取信息 查询数据 不会修改服务器上的数据，数据安全，请求的数据放在http包头，URL之后
+例如：login.action?name=hyddd&password=idontknow&verify=%E4%BD%E5%A5%BD
+提交的数据少，1024B.
+GET方法：在浏览器的地址栏中输入网址的方式访问网页时，浏览器采用GET方法向服务器获取资源，eg:GET /form.html HTTP/1.1 (CRLF)
+
+</pre>
+                                                      <pre>post:向服务器发送修改请求，比如论坛回复，提交表单。数据放在正文中，传送的数据大小没有限制。POST方法要求被请求服务器接受附在请求后面的数据。</pre>
+                                                      <pre> put和delete都可以通过get，post实现。
+</pre>
+                                                   get与post的详细对比
+                                                      <pre>1. get是从服务器上获取数据，post是向服务器传送数据。
+2. get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。
+3. 对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。
+4. get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。
+5. get安全性非常低，post安全性较高。但是执行效率却比Post方法好。 
+</pre>
+                                                </li>
+						<li>
+							http状态吗：服务器用来通知客户端，发生了什么事。<br>
+							<pre>1XX  100-102 信息提示
+  2XX  200-207 成功
+  3XX  300-307 重定向
+  4XX  400-449（中间空缺） 请求错误
+  5XX  500-510 600 服务器错误
+</pre>
+						<a href="http://www.cnblogs.com/loveyakamoz/archive/2011/09/03/2165266.html" class="btn btn-primary" target="_blank">常见状态码</a>	
+							
+						</li>
+						<li>Json （JavaScript object Notation）javascript的一个子集，JSON指的是 JavaScript对象表示法,负责数据交换。
+  <pre>JSON 是存储和交换文本信息的语法。类似 XML。</pre>
+  <pre>JSON 比 XML 更小、更快，更易解析。</pre>
+  Json和Java对象的转换 ObjectMapper ：<a href="http://lijingshou.iteye.com/blog/2003020 " class="btn btn-primary" target="_blank">传送门</a>
+</li>
+						
+						<li>
+							<pre>REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。</pre>
+ <pre>REST 原则是分层系统，这表示组件无法了解它与之交互的中间层以外的组件。通过将系统知识限制在单个层，可以限制整个系统的复杂性，促进了底层的独立性。</pre>
+ <pre>资源是REST中最关键的抽象概念，它们是能够被远程访问的应用程序对象。</pre>
+						</li>
+					</ol>
+						
+				</div>
+
 				
+
+				<!--end-->
 			</div>
 		</div>
 	</div>
@@ -227,5 +285,6 @@ Git 更像是把变化的文件作快照后，记录在一个微型的文件系�
 <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>
