@@ -24,5 +24,5 @@
 >       mercy9222141560096056549
 ---
 OAuth2.0时序图
-[OAuth2.0][1]
+![OAuth2.0][1]
 [1]: http://cshijiel.github.io/roc/images/OAuth2.0.jpg
