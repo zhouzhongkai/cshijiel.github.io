@@ -1,4 +1,4 @@
-cshijiel.github.io 光宇游戏B组共用Github账户
+光宇游戏B组共用Github账户
 ==================
 ---
 [进入首页][1]
