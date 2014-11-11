@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				
+				<br /><br />
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014年11月7日</font></h1>
+					<font color="red" size="4">Git 学习小结</font><br />
+<pre>				
+1--配置git：
+	$ git config --global user.name "Your Name"
+	$ git config --global user.email "email@example.com"
+2--创建版本库
+   创建目录：$ mkdir learngit		
+	创建版本库；
+	初始化Git仓库，$ git init 
+	添加文件到Git仓库，分两步：
+	第一步，$ git add + name ，注意，可反复多次使用，添加多个文件
+	第二步，$ git commit，完成
+	-m "添加注释"
+3--查看工作区状态
+	$ git status
+	$ git diff 查看修改内容
+4--版本回退
+	HEAD指针 指向当前版本,上一个版本就是HEAD^ ，上上一个版本就是HEAD^^ ，上100个版本 HEAD~100
+	回到指定版本：
+	$ git reset --hard commit_id
+	$ git log 查看提交历史
+	$ git log --pretty=oneline
+	$ git reflog 查看命令历史
+5--工作区和暂存区	
+6--管理修改
+	Git跟踪修改，每次修改，如果不add到暂存区，那就不会加入到commit中
+7--撤销修改	
+	$ git checkout -- file	
+8--删除文件
+	$ git rm 	
+9--远程仓库
+	创建SSH Key： $ ssh-keygen -t rsa -C "youremail@example.com"	
+10--添加远程库
+	$ git remote add origin git@server-name:path/repo-name.git
+	$ git push -u origin master 第一次推送master分支的所有内容
+	此后$ git push origin master 推送最新修改
+11--从远程库克隆
+	$ git clone git@github.com:michaelliao/gitskills.git
+	Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快
+	地址例子
+	git://github.com/michaelliao/gitskills.git
+	https://github.com/michaelliao/gitskills.git	
+12--创建与合并分支
+	查看分支：git branch
+	创建分支：git branch + name
+	切换分支：git checkout + name
+	创建+切换分支：git checkout -b + name
+	合并某分支到当前分支：git merge + name
+	删除分支：git branch -d + name	
+13--<a href="http://blog.csdn.net/hudashi/article/details/7664457" target="_blank">git fetch和git pull的区别</a>	
+	
+</pre>
+				</div >
+
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
