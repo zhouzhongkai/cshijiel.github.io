@@ -25,7 +25,7 @@ bWVyY3k5MjIyOjIK
 mercy9222141560096056549
 
 
-PSA:OAuth2.0时序图
+PSA:OAuth2.0时序图<br>
 ![OAuth2.0][2]
 [1]: http://cshijiel.github.io
 [2]: http://cshijiel.github.io/roc/images/OAuth2.0.jpg
