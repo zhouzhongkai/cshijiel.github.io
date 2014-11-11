@@ -1,5 +1,5 @@
 ## Git学习
-**陈鹏** 2014年11月7日 17:41:03
+**陈鹏** 2014年11月7日 17:41:03 [返回首页][1]
 
 ### 整个过程
 
@@ -20,3 +20,5 @@
     git fetch origin master
     git pull origin master
 10. 然后本地编辑修改提交后再push到远程库
+
+  [1]: http://cshijiel.github.io
