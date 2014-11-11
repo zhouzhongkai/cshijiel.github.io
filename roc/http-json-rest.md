@@ -24,7 +24,7 @@ bWVyY3k5MjIyOjIK
 > 订单号:（用户名+时间戳）MD5后ASCII取27位+5位随机数 
 mercy9222141560096056549
 
-___
+
 PSA:OAuth2.0时序图
 ![OAuth2.0][2]
 [1]: http://cshijiel.github.io
