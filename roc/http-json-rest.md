@@ -12,17 +12,19 @@
 **总结：有的是加密，有的是摘要，不可混淆！**
 
 **基本思路：**
->       定字符串+5位随机数 MD5摘要
->       cshijiel56459
->       b1dac4f0952c5b1f22bbcda5338d5b69
-		
->       被充值的账号+:+充值金额 BASE64加密
->       mercy9222:2
->       bWVyY3k5MjIyOjIK
 
->       订单号:（用户名+时间戳）MD5后ASCII取27位+5位随机数
->       mercy9222141560096056549
----
-OAuth2.0时序图
+> 定字符串+5位随机数 MD5摘要 
+cshijiel56459 
+b1dac4f0952c5b1f22bbcda5338d5b69 
+
+> 被充值的账号+:+充值金额 BASE64加密 
+mercy9222:2 
+bWVyY3k5MjIyOjIK
+> 
+> 订单号:（用户名+时间戳）MD5后ASCII取27位+5位随机数 
+mercy9222141560096056549
+
+___
+PSA:OAuth2.0时序图
 ![OAuth2.0][1]
 [1]: http://cshijiel.github.io/roc/images/OAuth2.0.jpg
