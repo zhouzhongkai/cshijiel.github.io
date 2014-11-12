@@ -31,7 +31,7 @@
 						</li>
 												<li>memcache工作原理
 
-							<pre>Memcached 的原理并不复杂。它采用了C/S的模式，在 server 端启动服务进程，在启动时可以指定监听的 ip，自己的端口号，所使用的内存大小等几个关键参数。一旦启动，服务就一直处于可用状态。Memcached 的目前版本是通过C实现，采用了单进程，单线程，异步I/O，基于事件 (event_based) 的服务方式.使用 libevent 作为事件通知实现。多个 Server 可以协同工作，但这些 Server 之间是没有任何通讯联系的，每个 Server 只是对自己的数据进行管理。Client 端通过指定 Server 端的 ip 地址(通过域名应该也可以)。需要缓存的对象或数据是以 key->value 对的形式保存在Server端。key 的值通过 hash 进行转换，根据 hash 值把 value 传递到对应的具体的某个 Server 上。当需要获取对象数据时，也根据 key 进行。首先对 key 进行 hash，通过获得的值可以确定它被保存在了哪台 Server 上，然后再向该 Server 发出请求。Client 端只需要知道保存 hash(key) 的值在哪台服务器上就可以了。</pre>
+							<pre>Memcached 的原理并不复杂。它采用了C/S的模式，在 server 端启动服务进程，在启动时可以指定监听的 ip，<br>自己的端口号，所使用的内存大小等几个关键参数。一旦启动，服务就一直处于可用状态。<br>Memcached 的目前版本是通过C实现，采用了单进程，单线程，异步I/O，基于事件 (event_based) 的服务方式.使用 libevent 作为事件通知实现。<br>多个 Server 可以协同工作，但这些 Server 之间是没有任何通讯联系的，每个 Server 只是对自己的数据进行管理。Client 端通过指定 Server 端的 ip 地址(通过域名应该也可以)。<br>需要缓存的对象或数据是以 key->value 对的形式保存在Server端。key 的值通过 hash 进行转换，根据 hash 值把 value 传递到对应的具体的某个 Server 上。<br>当需要获取对象数据时，也根据 key 进行。首先对 key 进行 hash，通过获得的值可以确定它被保存在了哪台 Server 上，然后再向该 Server 发出请求。Client 端只需要知道保存 hash(key) 的值在哪台服务器上就可以了。</pre>
 <li>memcache代码<br>
 <a href="http://www.blogjava.net/ruoyoux/articles/269403.html" class="btn btn-primary" target="_blank">传送门</a>
 </li>
