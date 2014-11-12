@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014年11月12日</font></h1>
+					<font color="red" size="4">cookie,memcached 学习小结</font><br />
+<pre>
+Question:
+	1，第三方登录时序图
+	2，memcached 的适用情况
+	   xmemcached
+
+--------------------	
+	1，MemCache：
+	-简介：分布式的高速缓存系统
+	Memcache是一个高性能的分布式的内存对象缓存系统，通过在内存里维护一个统一的巨大的hash表，它能够用来存储各种格式的数据，包括图像、视频、文件以及数据库检索的结果等。
+	简单的说就是将数据调用到内存中，然后从内存中读取，从而大大提高读取速度
+	Memcached是以守护程序(监听)方式运行于一个或多个服务器中，随时会接收客户端的连接和操作。
+	
+	-特性和限制：
+	在 Memcached中可以保存的item数据量是没有限制的，只要内存足够 。
+	最大30天的数据过期时间,设置为永久的也会在这个时间过期，常量REALTIME_MAXDELTA 
+	最大键长为250字节，大于该长度无法存储，常量KEY_MAX_LENGTH 250控制 
+	单个item最大数据是1MB，超过1MB数据不予存储
+	memcached是一种无阻塞的socket通信方式服务，基于libevent库，由于无阻塞通信，对内存读写速度非常之快。
+	memcached是键值一一对应
+	
+	-在中型网站中的应用
+	为了缓解数据库的压力，让Memcache作为一个缓存区域，把部分信息保存在内存中，在前端能够迅速的进行存取。
+	
+	-为什么要使用memcache
+	1）对数据库的高并发读写：
+	关系型数据库本身就是个庞然大物，处理过程非常耗时（如解析SQL语句，事务处理等）。如果对关系型数据库进行高并发读写（每秒上万次的访问），那么它是无法承受的。
+	2）对海量数据的处理：
+	对于大型的SNS网站，每天有上千万次的数据产生（如twitter, 新浪微博）。对于关系型数据库，如果在一个有上亿条数据的数据表种查找某条记录，效率将非常低。
+	
+	使用memcache能很好的解决以上问题。
+	在实际使用中，通常把数据库查询的结果保存到Memcache中，下次访问时直接从memcache中读取，而不再进行数据库查询操作，这样就在很大程度上减少了数据库的负担。
+	保存在memcache中的对象实际放置在内存中，这也是memcache如此高效的原因。
+	
+	-memcache适用和不适用场景
+	适用memcached的业务场景： 
+	1）如果网站包含了访问量很大的动态网页，因而数据库的负载将会很高。由于大部分数据库请求都是读操作，那么memcached可以显著地减小数据库负载。 
+	2）如果数据库服务器的负载比较低但CPU使用率很高，这时可以缓存计算好的结果（ computed objects ）和渲染后的网页模板（enderred templates）。 
+	3）利用memcached可以缓存 session数据 、临时数据以减少对他们的数据库写操作。 
+	4）缓存一些很小但是被频繁访问的文件。 
+	5）缓存Web 'services'（非IBM宣扬的Web Services，译者注）或RSS feeds的结果.。
+	不适用memcached的业务场景： 
+	1）缓存对象的大小大于1MB   
+	Memcached本身就不是为了处理庞大的多媒体（large media）和巨大的二进制块（streaming huge blobs）而设计的。   
+	2）key的长度大于250字符   
+	3）虚拟主机不让运行memcached服务   
+		  如果应用本身托管在低端的虚拟私有服务器上，像vmware, xen这类虚拟化技术并不适合运行memcached。Memcached需要接管和控制大块的内存，如果memcached管理的内存 
+	被OS或 hypervisor交换出去，memcached的性能将大打折扣。 
+	4）应用运行在不安全的环境中   
+	Memcached为提供任何安全策略，仅仅通过telnet就可以访问到memcached。如果应用运行在共享的系统上，需要着重考虑安全问题。 
+	5）业务本身需要的是持久化数据或者说需要的应该是database
+	
+	2，cookie
+	Cookie是由服务器端生成，发送给User-Agent（一般是浏览器）.
+	
+	3，UML-建模之时序图（Sequence Diagram）
+	http://smartlife.blog.51cto.com/1146871/284874
+	
+	4, CSS调整位置：<div id="container" style="margin: 0 auto;" >
+		用style="margin: 0 auto;" 居中显示
+	
+	
+	=======================
+	郭海(开发) 13:34:42
+	A组同学把项目完成即可 
+	B组同学，明后两天看一下mybatis和velocity的配置。
+	有不明白的问下A组，或公司的部门的杨家一
+
+
+				</div >	
+				
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
