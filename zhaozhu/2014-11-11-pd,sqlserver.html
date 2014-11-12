@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014年11月11日</font></h1>
+					<font color="red" size="4">pd,sqlserver 学习小结</font><br />
+<pre>
+<font color="red">				
+	1，设计数据库表
+	2，随着用户数的增加，查询难度增加，如何解决这个问题。
+</font>
+	1--PD-powerdesigner-用来设计数据库
+	创建步骤：new-model-information-physical data 选sqlserver 2008
+	pd中-主，外键设置
+	pd设置主键自增，起始值
+	pd显示表code，显示列code
+
+	2--数据库命名和设计规范
+
+	3--oAuth--一种开放的协议-第三方可以使用OAUTH认证服务
+	授权流程
+	1.获取未授权的Request Token
+	2.获取用户授权的Request Token
+	3.用授权的Request Token换取Access Token
+
+	4--sql server数据库
+	(1) int ,bigint ,smallint ,tinyint 区别
+	bigint：从-2^63(-9223372036854775808)到2^63-1(9223372036854775807)的整型数据，存储大小为 8 个字节。一个字节就是8位，那么bigint就有64位
+	int：从-2^31(-2,147,483,648)到2^31-1(2,147,483,647)的整型数据，存储大小为 4 个字节。int类型，最大可以存储32位的数据
+	smallint：从-2^15(-32,768)到2^15-1(32,767)的整数数据，存储大小为 2 个字节。smallint就是有16位
+	tinyint：从0到255的整数数据，存储大小为 1 字节。tinyint就有8位。
+	(2) datetime ,smalldatetime 区别
+	[1]时间范围: 
+	smalldatetime的有效时间范围1900/1/1~2079/6/6
+	datetime的有效时间范围1753/1/1~9999/12/31
+	如果该值不用到太远的日期范围，就使用smalldatetime。
+	[2]精确度:
+	smalldatetime只精准到分，而datetime则可精准到3.33毫秒（%3秒）
+	因此，当怎么存，秒都是00时，其实是smalldatetime惹的祸，类型别改成datetime后，秒的部份就可以正常储存了。
+	[3]
+	smalldatetime占用4个字节，前2个字节存储base date（1900年1月1日）之后的天数。后2个字节存储午夜后的分钟数。
+	datetime占用8个字节，前4个字节存储base date（即1900年1月1日）之前或之后的天数，后4个字节存储午夜后的毫秒数。
+	由于datetime的精度是3%秒，这就涉及到小数，毫秒之前可以是冒号，也可以是小数点。
+	使用冒号时表示的意义同时分秒间隔，11:11:11:21表示021毫秒，前面的0省略，
+	而小数点表示的意义同数学上的小数点，如11:11:11.21表示210毫秒，省略的是后面的0。
+				
+</pre>
+
+				</div >	
+				
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

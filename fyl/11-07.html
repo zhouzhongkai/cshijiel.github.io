@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="#">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li class="active">
+								<a href="https://cshijiel.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月7日</small></h1>
+						<p class="lead">Git学习：</p>
+						<ol>
+							<li>对版本控制的简单了解。
+								<br>所谓版本控制就是对一些东西的所有变化过程的记录，便于我们查看过去的所有改动，在项
+								<br>目的开发过程中，记录下开发的每个阶段是很有必要的。
+							</li>
+							<li>参考《Pro Git》学习版本控制软件Git的简单操作
+								<br>Git：分布式的版本控制系统，工作时是在工作目录、暂存区以及本地仓库三者间管理文件变
+								<br>化。使用时需要手动将变化后的文件add到暂存区，然后再commit到本地仓库，最后push
+								<br>到远程库。
+							</li>
+							<li>
+								配置:<br>
+								绑定账户<br>
+								<pre>git config –global user.name "fanyongliang"</pre>
+								绑定邮件<br>
+								<pre>git config –global user.email fanyongliang@gyyx.cn</pre>
+								生成key<br>
+								<pre>ssh-keygen –t rsa –C "fanyongliang@gyyx.cn"</pre>
+							</li>
+							<li>
+								操作:<br>
+								克隆一个库<br>
+								<pre>git clone git@github.com:cshijiel/cshijiel.github.io.git</pre>
+								修改index.html文件并将文件放到暂存区<br>
+								<pre>git add index.html</pre>
+								查看改动的地方<br>
+								<pre>git status</pre>
+								提交修改<br>
+								<pre>git commit –m "Commited by Fanyongliang."</pre>
+								推送数据到远程库<br>
+								<pre>git push origin master</pre>
+							</li>
+						</ol>				
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="#">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li class="active">
+								<a href="https://cshijiel.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月11日</small></h1>
+					<ol>
+						<li>Token了解:
+							<br>Token是在struts2框架中使用的令牌，通常我们会在jsp页面中增加一块隐藏域用来放置Token标签，标签会在页面产生一个token id，在struts2配置文件中为token拦截器加入需要拦截的方法。jsp页面发出请求时会生成令牌保存在session(不同的页面可以共享)中。如果有action方法被拦截到，会判断session中的token id和发过来的token id是否相等。如果不相等，会跳转到指定页面，此时token id不会变；如果相等了，表示重复提交了，session中的token id会被清空等待下一次生成令牌。
+						</li>
+						<li>设计一个用户表:
+							<br>用户登录数据表
+							<pre>/*==============================================================*/<br>/* Table: user_login_tb                                         */<br>/*==============================================================*/<br>create table user_login_tb (<br>   user_id              int                  identity,<br>   user_account         varchar(20)          not null,<br>   user_password        varchar(20)          not null,<br>   user_key             varchar(10)          not null,<br>   constraint PK_USER_LOGIN_TB primary key (user_id)<br>)</pre>
+							<br>用户信息数据表
+							<pre>/*==============================================================*/<br>/* Table: user_info_tb                                          */<br>/*==============================================================*/<br>create table user_info_tb (<br>   info_id              int                  identity,<br>   user_id              int                  not null,<br>   info_nickname        varchar(10)          not null,<br>   info_gender          bit                  not null,<br>   info_phone           varchar(20)          not null,<br>   info_email           varchar(50)          not null,<br>   info_question        varchar(20)          not null,<br>   info_answer          varchar(20)          not null,<br>   constraint PK_USER_INFO_TB primary key (info_id)<br>)</pre>
+							<br>登录日志表
+							<pre>/*==============================================================*/<br>/* Table: user_login_log                                        */<br>/*==============================================================*/<br>create table user_login_log (<br>   log_id               int                  identity,<br>   user_id              int                  not null,<br>   log_ip_addr          varchar(20)          not null,<br>   log_login_time       smalldatetime        not null,<br>   constraint PK_USER_LOGIN_LOG primary key (log_id)<br>)</pre>
+							<br>PD工具设计表
+							<a href="#" class="thumbnail">
+								<img src="img/LoginSystem.png" alt="" />
+							</a>
+						</li>
+						<li>Maven了解:
+							<br>Maven是对项目架构的管理，更关键的是对包的管理。
+							<br>Maven仓库->search.maven.org
+							<br>由于掉用官方仓库的包会比较慢，企业一般都会使用自己的私有仓库。
+						</li>
+						<li>项目架构:
+							<br>UI层->处理页面逻辑、控制器
+							<br>service层->处理业务逻辑，调用网络组件静态类
+							<br>BLL层->处理业务逻辑，调用非网络组件静态类
+							<br>Dao层->负责访问数据库
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

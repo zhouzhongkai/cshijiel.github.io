@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="utf-8">
+		<title>FanYongliang</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </a> <a class="brand" href="#">FanYongliang</a>
+						<div class="nav-collapse">
+							<ul class="nav">
+								<li>
+									<a href="#">Yesterday</a>
+								</li>
+								<li class="active">
+									<a href="#">Today</a>
+								</li>
+								<li>
+									<a href="#">Tomorrow</a>
+								</li>
+							</ul>
+							<ul class="nav pull-right">
+								<li>
+									<a href="#">Back</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="span3">
+					<div class="well" style="padding: 8px 0;">
+						<ul class="nav nav-list">
+							<li class="nav-header"><i class="icon-user"></i>
+								FanYongliang
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
+							</li>
+							<li class="divider">
+							</li>
+							<li class="nav-header"><i class="icon-folder-open"></i>
+								Note
+							</li>	
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-07.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-07</a>
+							</li>
+							<li class="active">
+								<a href="https://cshijiel.github.io/fyl/11-10.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-10</a>
+							</li>
+							<li>
+								<a href="https://cshijiel.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="span9">
+					<div class="hero-unit">
+						<h1><small>2014年11月10日</small></h1>
+					<ol>
+						<li>HTTP协议:
+							<br>定义浏览器与web服务器如何通信和通信的数据格式
+						</li>
+						<li>HTTP协议通信过程:
+							<br>1).浏览器与服务器建立连接
+							<br>2).浏览器向web服务器发送请求数据包
+							<br>3).web服务器接受请求包，返回响应数据包
+							<br>4).浏览器接受响应包，关闭连接
+						</li>
+						<li>请求包Request:
+							<br>1).请求行---请求方式  资源路径  协议版本
+							<br>2).消息头---key:value
+							<br>3).实体内容---请求为POST时存在表单数据
+						</li>
+						<li>响应包Response:
+							<br>1).状态行---协议版本  状态码  描述内容
+							<br>2).消息头---key:value
+							<br>3).实体内容---逐行解析
+						</li>
+						<li>REST的设计准则:
+							<br>1).web中的所有事物抽象成资源
+							<br>2).每个资源对应唯一的标识，目录结构式的URI
+							<br>3).任何操作都不会改变资源标识
+							<br>4).任何操作都是无状态的
+							<br>5).传输使用XML、JSON或两者兼具
+						</li>
+						<li>在REST中，使用不同的HTTP请求方法对资源进行CRUD操作，这样一来，对一个资源的不同操作就可以不用各自的URI了，只需要改变它的请求方式就可以了。
+							<br>C-->使用POST，在服务器上创建资源
+							<br>R-->使用GET，检索服务器上的资源
+							<br>U-->使用PUT，更新服务器上的资源
+							<br>D-->使用DELETE，删除服务器上的某个资源
+						</li>
+						<li>状态码:1xx:通知  2xx:成功  3xx:重定向  4xx:客户端错误  5xx:服务器端错误</li>
+						<li>HTTP协议的几种请求方法:
+							<br>GET、HEAD、POST、PUT、DELETE、OPTIONS、TRACE
+							<br>GET:发送请求获取资源数据
+							<br>HEAD:仅获取HTTP头信息
+							<br>POST:向服务器提交数据
+							<br>PUT:向服务器发送数据并且指定了存放位置
+							<br>DELETE:删除某个资源
+							<br>OPTIONS:获取URL支持的方法
+							<br>TRACE:回显服务器收到的请求
+						</li>
+						<li>JSON:轻量级的数据交换格式，与XML相比，速度更快，文档更小</li>
+						<li>
+							JSON进行数据交换的两种结构:<br>
+							表示一个对象<br>
+							<pre>var obj = {'id':1,'name':'xxx','age':21};<br>var name = obj.name;</pre>
+							表示一个数组<br>
+							<pre>var jsonArr = [{'id':1,'name':'zhangsan'},{'id':2,'name':'lisi'}];<br>var name = jsonArr[1].name;</pre>
+						</li>
+						<li>
+							Java转换成JSON:<br>
+							对象的转换<br>
+							<pre>Employee emp = new Emploee(1,"zhangsan","男");<br>JSONObject obj = JSONObject.fromObject(emp);<br>String jsonStr = obj.toString();</pre>
+							数组的转换<br>
+							<pre>List<Employee> emps = new ArrayList<Employee>();<br>for(int i=0;i<3;i++){<br>&nbsp;&nbsp;Employee e = new Employee();<br>&nbsp;&nbsp;e.setId(i+1);<br>&nbsp;&nbsp;e.setName("name"+i);<br>&nbsp;&nbsp;e.setGender("男");<br>&nbsp;&nbsp;emps.add(e);<br>}<br>JSONArray jsonArr = JSONArray.fromObject(emps);<br>String jsonStr = jsonArr.toString();</pre>
+						</li>
+						<li>
+							<p>Q:在服务器与服务器之间进行一些交易充值等操作时，操作成功时会显示请求地址，当然地址
+也会被一些人通过非法的途径抓取到，此时如果有人模拟一个服务器向充值服务器发出恶意请
+求，就会造成很大的财产损失，所以需要在进行充值的两个服务器之间添加某种验证。</p>
+							<p>A:我们可以在进行交互的两个服务器上各自都约定好保存一致的Key，然后对于请求地址进行
+加密，加密方式有MD5哈希加密、AES对称加密、RSA非对称加密</p>
+						</li>
+					</ol>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>

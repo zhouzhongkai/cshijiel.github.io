@@ -54,305 +54,48 @@
 
 				<!--begin-->
 				<div class="item">
-					<h1>周忠凯2014年11月7日</h1>
+					<h1>周忠凯</h1>
 					<p class="lead"></p>
-					<ol>
-						<li>了解和使用Git<br>
-Git是分布式的版本控制工具，可以指定和若干不同的远端代码仓库进行交互，就可以在同一个项目中，<br>
-分别和不同工作小组的人相互协作。Git 只关心文件数据的整体是否发生变化，Git 不会保存前后变化的差异数据。<br>
-Git 更像是把变化的文件作快照后，记录在一个微型的文件系统中。<br></li>
-						<li>在学习中所使用和实验的指令及对其的理解：<br>
-1 git config --global user.name "zhouzhongkai"<br>
-  git config --global user.email zhouzhongkai@gyyx.cn<br>
-  判断权限问题，commit其他任何的人的版本库 没有验证 不就提交上去了吗...<br>
-2 git config --list<br>
-  检查配置信息<br>
-3 git init<br>
-  初始化，并且生成一个.git目录<br>
-4 ssh-keygen -t rsa -C “zhouzhongkai@gyyx.cn”<br>
-  获取ssh key，发现的问题：版本库的SSH方式和HTTPS方式是不同的，认证机制不同。<br>
-当建立了本机密钥之后，使用ssh方式实际上是不需要再次认证的，而https则每次需要输入密码 。<br>
-5 git clone [url] 服务器上有的数据克隆之后本地都有<br>
-6 git add + 想要提交的文件名，把数据暂存<br>
-7 git commit -m "注释的一些信息" 如果失败会回滚到add之前，成功推送修改到本地库中；<br>
-8 git push  将本地仓库修改推送到服务器上的仓库中<br>
-9 push与pull <br>
- git push origin branch_name;本地到服务器<br>
- git pull origin branch_name;服务器到本地<br>
-10 git branch branch_name 新建分支 checkout切换<br>
-11 分支 指向commit对象的可变指针 轻量 廉价 开发遇到问题会很方便<br></li>
-操作过程： 1 创建库zhouzhongkai.github.io<br>
-          2 创建index.html<br>
-          3  git remote add zzk https://github.com/zhouzhongkai/zhouzhongkai.github.io <br>
-             放在远程库zzk中<br>
-          4  git remote 列出库<br>
-          5  git status 查看改动<br>
-          6  git add . 把index.html文件暂存<br>
-          7  git commit -m "first" 推送到本地的库<br>
-          8  git push zzk master 推送到服务器上的库<br>
-						</li>
-						<li>经过一系列的zhouzhongkai.github.io 404后<br>
-						用陈鹏的了<br>
-						git clone http://github.com/cshijiel.github.io.git<br>
-                                                     remote add push之后应该能加进去了<br>
+					<ol><li><a href="https://cshijiel.github.io/zhouzhongkai/git.html" target="_blank">git学习</a></li><br>
+					<li><a href="https://cshijiel.github.io/zhouzhongkai/http%E5%8D%8F%E8%AE%AE.html" target="_blank">http协议</a></li><br>	
+<li><a href="https://cshijiel.github.io/zhouzhongkai/%E6%95%B0%E6%8D%AE%E5%BA%93.html" target="_blank">数据库学习</a></li>
 
-</li>
 					</ol>
 					
 				</div>
 				<!--end-->
-				<div class="item">
-					<h1>范永良<small>2014年11月7日 21:08:00</small></h1>
-					<p class="lead">Git学习：</p>
-					<ol>
-						<li>对版本控制的简单了解。
-							<br>所谓版本控制就是对一些东西的所有变化过程的记录，便于我们查看过去的所有改动，在项
-							<br>目的开发过程中，记录下开发的每个阶段是很有必要的。
-						</li>
-						<li>参考《Pro Git》学习版本控制软件Git的简单操作
-							<br>Git：分布式的版本控制系统，工作时是在工作目录、暂存区以及本地仓库三者间管理文件变
-							<br>化。使用时需要手动将变化后的文件add到暂存区，然后再commit到本地仓库，最后push
-							<br>到远程库。
-						</li>
-						<li>
-							配置:<br>
-							绑定账户<br>
-							<pre>git config –global user.name "fanyongliang"</pre>
-							绑定邮件<br>
-							<pre>git config –global user.email fanyongliang@gyyx.cn</pre>
-							生成key<br>
-							<pre>ssh-keygen –t rsa –C "fanyongliang@gyyx.cn"</pre>
-						</li>
-						<li>
-							操作:<br>
-							克隆一个库<br>
-							<pre>git clone git@github.com:cshijiel/cshijiel.github.io.git</pre>
-							修改index.html文件并将文件放到暂存区<br>
-							<pre>git add index.html</pre>
-							查看改动的地方<br>
-							<pre>git status</pre>
-							提交修改<br>
-							<pre>git commit –m "Commited by Fanyongliang."</pre>
-							推送数据到远程库<br>
-							<pre>git push origin master</pre>
-						</li>
-					</ol>
-				</div>
-				<!--end-->
-				<div class="item">
-					<h1>马涛<small>2014年11月7日 19:20:03</small></h1>
-					<p class="lead">整个过程：</p>
-					<ol>
-						
-						<li>在本地创建git版本库</li>
-						<li>在本地工作空间中修改文件后add到暂存区 然后commit到master分支上</li>
-						<li>查看版本库中的状态 </li>
-						<pre>git status</pre>
-						<li>查看文件状态 </li>
-						<pre>git giff</pre>
-						<li>显示最近提交的文件状态</li>
-						<pre>git log</pre>
-						<li>通过SSH协议连接GitHub，获取SSHKey <li>
-							<pre>ssh-keygen -t rsa -C"自己的邮箱地址"</pre>
-							获取后根据提示在Users/user中找到SSHKey 在GitHub中获得相应远程版本库的认可
-						<li>关联本地版本库与远程版本库</li>
-						<pre>git remote add origin 通常是SSH协议的版本库的地址</pre>
-						<li>把本地版本库中的内容推送到远程版本库master分支上</li>
-						<pre>git push -u origin master 一般只有在第一次推送的时候才使用-u连接下master分支</pre>
-						<li>从远程版本库中clone所有内容</li>
-						<pre>git clone "远程版本库的地址"</pre>
-						<li>创建分支</li>
-						<pre>git checkout -b 分支名称</pre>
-						<li>查看所有分支</li>
-						<pre>git branch </pre>
-						<li>切换到某一分支</li>
-						<pre>git checkout 分支名称</pre>
-						<li>将分支合并到现处分支</li>
-				</div>
-				
-				<br /><br />
-				<div class="item">
-					<h1>赵柱 <font color="green" size="4">2014年11月9日18:42:13</font></h1>
-					<font color="red" size="4">Git 学习小结</font><br />
-<pre>				
-1--配置git：
-	$ git config --global user.name "Your Name"
-	$ git config --global user.email "email@example.com"
-2--创建版本库
-   创建目录：$ mkdir learngit		
-	创建版本库；
-	初始化Git仓库，$ git init 
-	添加文件到Git仓库，分两步：
-	第一步，$ git add + name ，注意，可反复多次使用，添加多个文件
-	第二步，$ git commit，完成
-	-m "添加注释"
-3--查看工作区状态
-	$ git status
-	$ git diff 查看修改内容
-4--版本回退
-	HEAD指针 指向当前版本,上一个版本就是HEAD^ ，上上一个版本就是HEAD^^ ，上100个版本 HEAD~100
-	回到指定版本：
-	$ git reset --hard commit_id
-	$ git log 查看提交历史
-	$ git log --pretty=oneline
-	$ git reflog 查看命令历史
-5--工作区和暂存区	
-6--管理修改
-	Git跟踪修改，每次修改，如果不add到暂存区，那就不会加入到commit中
-7--撤销修改	
-	$ git checkout -- file	
-8--删除文件
-	$ git rm 	
-9--远程仓库
-	创建SSH Key： $ ssh-keygen -t rsa -C "youremail@example.com"	
-10--添加远程库
-	$ git remote add origin git@server-name:path/repo-name.git
-	$ git push -u origin master 第一次推送master分支的所有内容
-	此后$ git push origin master 推送最新修改
-11--从远程库克隆
-	$ git clone git@github.com:michaelliao/gitskills.git
-	Git支持多种协议，包括https，但通过ssh支持的原生git协议速度最快
-	地址例子
-	git://github.com/michaelliao/gitskills.git
-	https://github.com/michaelliao/gitskills.git	
-12--创建与合并分支
-	查看分支：git branch
-	创建分支：git branch + name
-	切换分支：git checkout + name
-	创建+切换分支：git checkout -b + name
-	合并某分支到当前分支：git merge + name
-	删除分支：git branch -d + name	
-13--<a href="http://blog.csdn.net/hudashi/article/details/7664457" target="_blank">git fetch和git pull的区别</a>	
-	
-</pre>
-				</div >
-				
 				<!--begin-->
 				<div class="item">
-					<h1>周忠凯<small>2014年11月10日 16:30</small></h1>
-					<p class="lead">学习内容：</p>
-					<ol>
-						<li>1http是属于应用层的面向对象协议<br>
-                                                      <pre>无连接：每次连接只处理一个请求，服务器处理完客户的请求，接到客户的应答后，断开连接。
-                                                       </pre>
-                                                      <pre>无状态：http协议是无状态协议，对任何事物没有记忆能力。后续处理需要前面的信息，信息要重传，传送的数据量很大。另一方面，服务器不需要先前的信息时应答很快。
-                                                        </pre>
-                                                </li>
-						<li>.http中的get post delete put <br>
-                                                     get（查） post（改） put(增） delete（删）
-                                                      <pre> get：获取信息 查询数据 不会修改服务器上的数据，数据安全，请求的数据放在http包头，URL之后
-例如：login.action?name=hyddd&password=idontknow&verify=%E4%BD%E5%A5%BD
-提交的数据少，1024B.
-GET方法：在浏览器的地址栏中输入网址的方式访问网页时，浏览器采用GET方法向服务器获取资源，eg:GET /form.html HTTP/1.1 (CRLF)
-
-</pre>
-                                                      <pre>post:向服务器发送修改请求，比如论坛回复，提交表单。数据放在正文中，传送的数据大小没有限制。POST方法要求被请求服务器接受附在请求后面的数据。</pre>
-                                                      <pre> put和delete都可以通过get，post实现。
-</pre>
-                                                   get与post的详细对比
-                                                      <pre>1. get是从服务器上获取数据，post是向服务器传送数据。
-2. get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。
-3. 对于get方式，服务器端用Request.QueryString获取变量的值，对于post方式，服务器端用Request.Form获取提交的数据。
-4. get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。但理论上，IIS4中最大量为80KB，IIS5中为100KB。
-5. get安全性非常低，post安全性较高。但是执行效率却比Post方法好。 
-</pre>
-                                                </li>
-						<li>
-							http状态吗：服务器用来通知客户端，发生了什么事。<br>
-							<pre>1XX  100-102 信息提示
-  2XX  200-207 成功
-  3XX  300-307 重定向
-  4XX  400-449（中间空缺） 请求错误
-  5XX  500-510 600 服务器错误
-</pre>
-						<a href="http://www.cnblogs.com/loveyakamoz/archive/2011/09/03/2165266.html" class="btn btn-primary" target="_blank">常见状态码</a>	
-							
-						</li>
-						<li>Json （JavaScript object Notation）javascript的一个子集，JSON指的是 JavaScript对象表示法,负责数据交换。
-  <pre>JSON 是存储和交换文本信息的语法。类似 XML。</pre>
-  <pre>JSON 比 XML 更小、更快，更易解析。</pre>
-  Json和Java对象的转换 ObjectMapper ：<a href="http://lijingshou.iteye.com/blog/2003020 " class="btn btn-primary" target="_blank">传送门</a>
-</li>
-						
-						<li>
-							<pre>REST 指的是一组架构约束条件和原则。满足这些约束条件和原则的应用程序或设计就是 RESTful。</pre>
- <pre>REST 原则是分层系统，这表示组件无法了解它与之交互的中间层以外的组件。通过将系统知识限制在单个层，可以限制整个系统的复杂性，促进了底层的独立性。</pre>
- <pre>资源是REST中最关键的抽象概念，它们是能够被远程访问的应用程序对象。</pre>
-						</li>
-					</ol>
-						
+					<h1>范永良</h1>
+					<fieldset>
+    						<legend>Home</legend>
+   						 <p>Click here ->&nbsp;<a href="https://cshijiel.github.io/fyl/main.html">个人主页</a></p>
+ 					</fieldset>
 				</div>
-
+				<!--end-->
+				
 				
 				<br /><br />
 				<div class="item">
-					<h1>赵柱 <font color="green" size="4">2014年11月10日19:53:14</font></h1>
-					<font color="red" size="4">HTTP 学习小结</font><br />
-<pre>
-<font color="red">				
-	郭海(开发) 2014-11-10 10:01:29
-	B组同学今天看一下HTTP协议部分，主要了解以下几个关键词
-	json ,提交数据的几种方法, rest
-</font>
-1--HTTP-Hypertext transfer protocol-超文本传输协议
-   HTTP是无连接：无连接的含义是限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接。采用这种方式可以节省传输时间。
-   HTTP是无状态：HTTP协议是无状态协议。无状态是指协议对于事务处理没有记忆能力。缺少状态意味着如果后续处理需要前面的信息，则它必须重传，这样可能导致每次连接传送的数据量增大。另一方面，在服务器不需要先前信息时它的应答就较快。
-
-  -HTTP请求方法
-   1-GET     请求指定的页面信息，并返回实体主体。
-   2-HEAD    类似于get请求，只不过返回的响应中没有具体的内容，用于获取报头
-   3-POST    向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的建立和/或已有资源的修改。
-   4-PUT     从客户端向服务器传送的数据取代指定的文档的内容。
-   5-DELETE  请求服务器删除指定的页面。
-   6-CONNECT HTTP/1.1协议中预留给能够将连接改为管道方式的代理服务器。
-   7-OPTIONS 允许客户端查看服务器的性能。
-   8-TRACE   回显服务器收到的请求，主要用于测试或诊断。
-	
-  -HTTP 消息结构
-   HTTP是基于客户端/服务端（C/S）的架构模型。
-   HTTP使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。
-   客户端请求消息
-   客户端发送一个HTTP请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据4个部分组成。
-   服务器响应消息
-   HTTP响应由三个部分组成，分别是：状态行、消息报头、响应正文。
-	
-  -HTTP状态码
-   200 - 请求成功
-   301 - 资源（网页等）被永久转移到其它URL
-   404 - 请求的资源（网页等）不存在
-   500 - 内部服务器错误
-	
-2--JSON：JavaScript 对象表示法（JavaScript Object Notation）
-	JSON 是存储和交换文本信息的语法
-	语法规则：
-		数据在名称/值对中
-		数据由逗号分隔
-		花括号保存对象
-		方括号保存数组
-	
-	把 JSON 文本转换为 JavaScript 对象
-	JSON 实例 - 来自于符串的 对象
-	创建包含 JSON 语法的 JavaScript 字符串：
-	var txt = '{ "employee":[' +
-	'{ "firstName":"Bill" , "lastName":"Gates" },' +
-	'{ "firstName":"George" , "lastName":"Bush" },' +
-	'{ "firstName":"Thomas" , "lastName":"Carter" } ]}';
-	上面的结构是这样：
-	var txt = '{ "employee":[ {"":"","":""},{"":"","":""},{"":"","":""} ] }'
-
-3--rest-Representational State Transfer-REST-表述性状态转移-是一种软件架构风格
-   维基百科-wikipedia
-   注意区别应用的状态和连接协议的状态。HTTP连接是无状态的（也就是不记录每个连接的信息），而REST传输会包含应用的所有状态信息，因此可以大幅降低对HTTP连接的重复请求资源消耗。
-	
-4--URI-统一资源标识符-Uniform Resource Identifier-一个用于标识某一互联网资源名称的字符串
-   URL-统一资源定位符-Uniform / Universal Resource Locator-是因特网上标准的资源的地址（Address）
-   URN-统一资源名称--统一资源标识（URI）的历史名字
+					<h1>赵柱</h1>
+					<font color="red" size="4">学习小结</font><br />
+<pre>				
+	<a href="https://cshijiel.github.io/zhaozhu/2014-11-07-git.html" target="_blank">2014-11-07-git</a>
+	<a href="https://cshijiel.github.io/zhaozhu/2014-11-10-http.html" target="_blank">2014-11-10-http</a>
+	<a href="https://cshijiel.github.io/zhaozhu/2014-11-11-pd,sqlserver.html" target="_blank">2014-11-11-pd,sqlserver</a>
 				
 </pre>
 				</div >				
 				
 
 				<!--end-->
+			<h1>马涛</h1>
+					
+					
+					<ol>
+					
+						<li><a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/MT/GitText.md">Git练习</li>
+					</ol>
 			</div>
 		</div>
 	</div>
