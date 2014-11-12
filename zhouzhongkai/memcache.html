@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+<!--begin-->
+				<div class="item">
+					<h1>周忠凯<small>2014年11月12日 </small></h1>
+					<p class="lead">学习内容：</p>
+					<ol>
+						<li>为什么要使用memcache<br>
+<pre>1）对数据库的高并发读写：
+关系型数据库本身就是个庞然大物，处理过程非常耗时（如解析SQL语句，事务处理等）。如果对关系型数据库进行高并发读写（每秒上万次的访问），那么它是无法承受的。</pre>       
+<pre>2）对海量数据的处理：
+对于大型的SNS网站，每天有上千万次的数据产生（如twitter, 新浪微博）。对于关系型数据库，如果在一个有上亿条数据的数据表种查找某条记录，效率将非常低。</pre>                                         </li>
+						<li>
+							为什么会有Memcache和memcached两种名称？<br>
+<pre>其实Memcache是这个项目的名称，而memcached是它服务器端的主程序文件名</pre>						
+						</li>
+												<li>memcache工作原理
+
+							<pre>Memcached 的原理并不复杂。它采用了C/S的模式，在 server 端启动服务进程，在启动时可以指定监听的 ip，自己的端口号，所使用的内存大小等几个关键参数。一旦启动，服务就一直处于可用状态。Memcached 的目前版本是通过C实现，采用了单进程，单线程，异步I/O，基于事件 (event_based) 的服务方式.使用 libevent 作为事件通知实现。多个 Server 可以协同工作，但这些 Server 之间是没有任何通讯联系的，每个 Server 只是对自己的数据进行管理。Client 端通过指定 Server 端的 ip 地址(通过域名应该也可以)。需要缓存的对象或数据是以 key->value 对的形式保存在Server端。key 的值通过 hash 进行转换，根据 hash 值把 value 传递到对应的具体的某个 Server 上。当需要获取对象数据时，也根据 key 进行。首先对 key 进行 hash，通过获得的值可以确定它被保存在了哪台 Server 上，然后再向该 Server 发出请求。Client 端只需要知道保存 hash(key) 的值在哪台服务器上就可以了。</pre>
+<li>memcache代码<br>
+<a href="http://www.blogjava.net/ruoyoux/articles/269403.html" class="btn btn-primary" target="_blank">传送门</a>
+</li>
+<li>常用命令<a href="http://blog.csdn.net/jinxingfeng_cn/article/details/24264693" class="btn btn-primary" target="_blank">传送门</a>
+
+</li>
+											</ol>
+						
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
