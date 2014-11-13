@@ -147,6 +147,8 @@ Spring Web MVC核心架构图，如图
 
 参考资料：http://jinnianshilongnian.iteye.com/blog/1594806
 
+http://mooc.guokr.com/post/610231/
+
   [1]: http://cshijiel.github.io
   [2]: http://cshijiel.github.io/roc/images/SpringMVC-Sequence.jpg
   [3]: http://cshijiel.github.io/roc/images/SpringMVC-core.jpg
