@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -41,7 +42,7 @@
 							<li class="nav-header"><i class="icon-user"></i>
 								FanYongliang
 							</li>
-							<li class="active">
+							<li>
 								<a href="https://cshijiel.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
 							</li>
 							<li class="divider">
@@ -58,7 +59,7 @@
 							<li>
 								<a href="https://cshijiel.github.io/fyl/11-11.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-11</a>
 							</li>
-							<li>
+							<li class="active">
 								<a href="https://cshijiel.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
 							</li>
 							<li>
@@ -69,19 +70,41 @@
 				</div>
 				<div class="span9">
 					<div class="hero-unit">
-						<h1>
-							Welcome!
-						</h1>
-						<p>
-							Welcome to visit my personal homepage!You will see some of my learning record .<br><br><small>By.FanYongliang</small>
-						</p>
-					</div>
-					
-                   			 <ul class="pager">
-						<li class="next">
-							更多功能还在抢修中 . . . 
+						<h1><small>2014年11月11日</small></h1>
+					<ol>
+						<li>Memcache了解:
+							<br>Memcache是高效的、快速的分布式内存对象缓存系统，主要用于加速WEB动态应用程序。memcache是一个服务器端软件，它也有自己的端口，用于维护一个存在于内存中的hash表。<br>由于Memcache作用于非持久化层，所以机器重启后数据将会清空，所以一般都会保存一些非重要信息。
 						</li>
-					</ul>
+						<li>Memcache的使用:
+							<br>使用Memcache的网站一般流量都是比较大的，为了缓解数据库的压力，让Memcache作为一个缓存区域，把部分信息保存在内存中，在前端能够迅速的进行存取。
+						</li>
+						<li>Memcached特征:
+							<br>1).协议简单<br>2).基于libevent事件处理<br>3).内置的内存管理方式<br>4).分布式
+						</li>
+						<li>程序代码分析:
+							<br>初始化一个Memcache的对象
+							<pre>$mem = new Memcache;</pre>
+							<br>连接到Memcache服务器端
+							<pre>$mem->connect("192.168.0.200", 12000);</pre>
+							<br>保存一个数据到Memcache服务器上
+							<pre>$mem->set('key1', 'This is first value', 0, 60);</pre>
+							<br>从Memcache服务器端获取一条数据
+							<pre>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val;</pre>
+							<br>使用replace方法来替换掉上面key1的值
+							<pre>$mem->replace('key1', 'This is replace value', 0, 60);<br>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val;</pre>
+							<br>Memcache保存数组
+							<pre>$arr = array('aaa', 'bbb', 'ccc', 'ddd');<br>$mem->set('key2', $arr, 0, 60);<br>$val2 = $mem->get('key2');<br>print_r($val2);</pre>
+							<br>删除一个数据
+							<pre>$mem->delete('key1');<br>$val = $mem->get('key1');<br>echo "Get key1 value: " . $val . "<br>";</pre>
+							<br>清除保存在Memcache服务器上的数据
+							<pre>$mem->flush();<br>$val2 = $mem->get('key2');<br>echo "Get key2 value: ";<br>print_r($val2);<br>echo "<br>";</pre>
+						</li>
+						<li>使用PD工具绘制时序图:
+							<br>用户登录验证
+							<img src="img/SequenceDiagram.png" alt="" />
+						</li>
+					</ol>	
+					</div>
 				</div>
 			</div>
 		</div>

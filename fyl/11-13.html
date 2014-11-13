@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+		<link href="css/site.css" rel="stylesheet">
 	</head>
 	<body>
 		<div class="container">
@@ -41,7 +42,7 @@
 							<li class="nav-header"><i class="icon-user"></i>
 								FanYongliang
 							</li>
-							<li class="active">
+							<li>
 								<a href="https://cshijiel.github.io/fyl/main.html">&nbsp;&nbsp; Welcome!</a>
 							</li>
 							<li class="divider">
@@ -61,7 +62,7 @@
 							<li>
 								<a href="https://cshijiel.github.io/fyl/11-12.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-12</a>
 							</li>
-							<li>
+							<li class="active">
 								<a href="https://cshijiel.github.io/fyl/11-13.html">&nbsp;&nbsp;<i class="icon-check"></i> 11-13</a>
 							</li>
 						</ul>
@@ -69,19 +70,16 @@
 				</div>
 				<div class="span9">
 					<div class="hero-unit">
-						<h1>
-							Welcome!
-						</h1>
-						<p>
-							Welcome to visit my personal homepage!You will see some of my learning record .<br><br><small>By.FanYongliang</small>
-						</p>
-					</div>
-					
-                   			 <ul class="pager">
-						<li class="next">
-							更多功能还在抢修中 . . . 
+						<h1><small>2014年11月11日</small></h1>
+					<ol>
+						<li>Mybatis了解:
+							<br>Mybatis是支持普通SQL查询、存储过程和高级映射的持久化框架。<br>Mybatis可以使用简单的XML或注解将普通的Java对象映射成数据库中的记录。
 						</li>
-					</ul>
+						<li>简单使用:
+							<br>1).建一个Maven工程<br>2).添加Mybatis的jar包，添加JDBC驱动包(使用Maven仓库)<br>3).建数据库，创建一个users表(id,name,age)<br>4).添加Mybatis的配置文件conf.xml<br>5).建一个与数据库表对应的实体类User(无参构造方法，有参构造方法，Get、Set方法，toString()方法)<br>6).定义操作users表的sql映射文件userMapper.xml<br>7).在conf.xml文件中注册userMapper.xml文件<br>8).创建Test类
+						</li>
+					</ol>	
+					</div>
 				</div>
 			</div>
 		</div>
