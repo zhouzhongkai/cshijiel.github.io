@@ -3,7 +3,7 @@
 
 ---
 
-### 整个过程
+## 整个过程
 
 1. 在本地创建git版本库
 2. 在github上创建空库，类似于username.github.io
