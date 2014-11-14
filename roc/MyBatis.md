@@ -3,6 +3,8 @@
 
 ---
 
+![mybatis-logo][2]
+
 #### 首先使用MySql（MariaDB）测试
 √测试成功
 
@@ -105,5 +107,16 @@ SqlSessionFactory 一旦被创建就应该在应用的运行期间一直存在�
 
 你应该在你的所有的代码中**一致性地使用这种模式**来保证所有数据库资源都能被正确地关闭。
 
+## 问题
+
+- MyBatis运行流程
+- MyBatis缓存机制
+
+## 参考资料
+
+[Mybatis原理分析一 从JDBC到Mybaits ][3]http://sishuok.com/forum/blogPost/list/3899.html
+
 
   [1]: http://cshijiel.github.io
+  [2]: http://cshijiel.github.io/roc/images/mybatis-logo.png
+  [3]: http://sishuok.com/forum/blogPost/list/3899.html
