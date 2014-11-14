@@ -1,0 +1,24 @@
+﻿1 MyBatis是支持普通SQL查询，存储过程，高级映射的优秀持久层。mybatis消除了几乎所有的JDBC代码和参数的手工设置以及对结果集的封装检查。<br>mybatis用XML或注解用于配置和原始映射，讲java的POJO映射数据库中的记录。<br>
+2  导入mybatis和数据库的jar包<br>
+   建立库和表<br>
+   conf.xml id和default一样<br>
+   建立实体类<br>
+   映射文件 mapping 写sql语句 namespace <br>
+   在conf.xml注册mapping.xml 路径结构<br>
+   test 加载mybitas的配置文件<br>
+   Reader reader = Resources.get.ResourceAsReader（resource）；<br>
+   创建sqlSession的工厂<br>
+   sqlSessionFactory sessionFactory = new sqlSessionFactoryBuilder.build(reader);<br>
+   创建能执行映射文件的session<br>
+   sqlSession session = sessionFactory.openSession();<br>
+   映射sql标识字符串<br>
+  String statement= （mapping的namespace 标签id） <br>
+  执行 User user=session.selectOne(statement,1)<br>
+3 增删改查 curb<br>
+  xml和注释<br>
+4 别名 src加log4j 加jar包<br>
+5 解决字段名和属性名不相同的问题：sql查询时设置别名 ，resultMap type id（select标签中引用）property column<br>
+6 掌握一对一 一对多查询<br>
+7 了解一级缓存和二级缓存<br>
+  一级缓存：session<br>
+  二级缓存：一个映射文件<br>
