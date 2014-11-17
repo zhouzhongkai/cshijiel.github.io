@@ -7,3 +7,6 @@
 ### UML建模，时序图，以及带有MemCached的登录过程
 ### MyBatis学习
 ### SpringMVC学习
+
+---
+手写Java代码，扫描~/roc/下的“*.md”文件，自动生成本文件。

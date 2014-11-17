@@ -1,5 +1,5 @@
 # MemCached缓存
-陈鹏-2014年11月12日 13:48:43
+陈鹏-2014年11月12日 13:48:43 [返回首页][1]
 
 ---
 ##MemCached简介
@@ -7,7 +7,7 @@
 
 ##原理示意图
 许多Web应用都将数据保存到RDBMS中，应用服务器从中读取数据并在浏览器中显示。但随着数据量的增大、访问的集中，就会出现RDBMS的负担加重、数据库响应恶化、网站显示延迟等重大影响。
-![MemCached原理示意图][1]
+![MemCached原理示意图][2]
 
 ##内部主要实现原理
 通过在内存里维护一个统一的巨大的hash表，memcached能够用来存储各种格式的数据，包括`图像`、`视频`、`文件`以及`数据库检索`的结果。
@@ -19,18 +19,18 @@
 基于客户端的memcached分布式**
 
 对于其中一些特点的理解：
-[libevent][2]是一套跨平台的事件处理接口的封装，能够兼容包括这些操作系统：Windows/Linux/BSD/Solaris 等操作系统的的事件处理。
+[libevent][3]是一套跨平台的事件处理接口的封装，能够兼容包括这些操作系统：Windows/Linux/BSD/Solaris 等操作系统的的事件处理。
 
 ##存储处理：
 ###数据存储方式：Slab Allocation
-![slabclass][3]
+![slabclass][4]
 
 该存储方式的特点是：Slab Allocation的原理相当简单。将分配的内存分割成各种尺寸的块（chunk），并把尺寸相同的块，但是分成组由于分配的是特定长度的内存，因此无法有效利用分配的内存。例如，将100字节的数据缓存到128字节的chunk中，剩余的28字节就浪费了（如下图）。针对这个问题的解决方案是：
-![byteschunk][4]
+![byteschunk][5]
 
 The most efficient way to reduce the waste is to use a list of size classes that closely matches (if that's at all possible) common sizes of objects that the clients of this particular installation of memcached are likely to store.
 就是说，如果预先知道客户端发送的数据的公用大小，或者仅缓存大小相同的数据的情况下，只要使用适合数据大小的组的列表，就可以减少浪费。
-![100in128][5]
+![100in128][6]
 
 ##数据过期方式：Lazy Expiration + LRU
 ###Lazy Expiration
@@ -50,12 +50,12 @@ The most efficient way to reduce the waste is to use a list of size classes that
 
 ##我做的一个例子
 
-![登陆的时序图，带有缓存MemCached][6]
+![登陆的时序图，带有缓存MemCached][7]
 
-
-  [1]: http://cshijiel.github.io/roc/images/MemCached%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg
-  [2]: http://baike.baidu.com/view/1590523.htm
-  [3]: http://cshijiel.github.io/roc/images/slabclass.jpg
-  [4]: http://cshijiel.github.io/roc/images/byteschunk.jpg
-  [5]: http://cshijiel.github.io/roc/images/100in128.jpg
-  [6]: http://cshijiel.github.io/roc/images/login-Sequence.png
+  [1]: http://cshijiel.github.io
+  [2]: http://cshijiel.github.io/roc/images/MemCached%E5%8E%9F%E7%90%86%E7%A4%BA%E6%84%8F%E5%9B%BE.jpg
+  [3]: http://baike.baidu.com/view/1590523.htm
+  [4]: http://cshijiel.github.io/roc/images/slabclass.jpg
+  [5]: http://cshijiel.github.io/roc/images/byteschunk.jpg
+  [6]: http://cshijiel.github.io/roc/images/100in128.jpg
+  [7]: http://cshijiel.github.io/roc/images/login-Sequence.png
