@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014-11-18</font></h1>
+					<font color="red" size="4">Spring MVC 学习小结</font><br />
+<pre>
+2014-11-18
+-------------------------
+Question:
+	1，获取参数的4种方式
+	2，往前端绑定数据
+	3，URI
+	4，post提交
+	5，用户数据100条
+	6，显示用户数据的表
+	   -查询功能
+	   -分页功能：
+	   两种方式-
+	   -前端页面分页
+	   -sql语句分页
+-------------------------
+
+培训视频5：
+Spring MVC学习小结：
+
+注解：Annotation
+
+Spring MVC基于注解的开发
+1-创建web项目
+2-在spring MVC的配置文件中指定注解驱动，配置扫描器
+3-@controller:标识当前类是控制层的一个具体实现
+4-@requestMapping:放在方法上面用来指定某个方法的路径，当它放在类上的时候相当于命名空间需要组合方法上的requestmapping来访问。
+ -@Init+方法，初始化的方法
+
+5-右键左下角servers-new-可以新建一个server-找到Apache-找路径
+6-/ui/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
+ MVC扫描器，扫描器可以扫描到所有注解的位置；
+ <context:component-scan base-package="cn.gyyx.test" />
+ 扫描器可以扫描某个包下面的所有注解
+
+7-注解知识点
+	//注解多个参数@RequestMapping(value="/test1",method=RequestMethod.post)
+	//method=RequestMethod.post设置只能通过post传参传值
+	//注解只有一个参数@RequestMapping("/test1")
+	//return "";指定返回的位置比如 return "user/index.jsp" ，返回到user下的index.jsp页面
+
+	-在HomeController.java中，public class HomeController的上面用RequestMapping("/user")来指定访问路径
+	  注解@RequestMapping("/path")用于指定解析路径
+	-在/ui/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml
+	文件中指定视图文件的位置或文件类型
+	<beans:property name="prefix" value="/WEB-INF/views/" />
+	<beans:property name="suffix" value=".jsp" />
+	表示以/WEB-INF/views/为前缀并且以.jsp为后缀的文件为视图文件
+	
+8-注解方式接收参数的4种方式
+  -HttpServletRequest地址栏传参   ?name=zhanzhu&sex=m&age=20
+  -直接在方法的参数上指定参数的名字，可以同时指定多个
+	地址栏中传参，"&"分割两个参数
+	在方法的参数中(Integer age)来指定参数为int类型（当提交参数不是int类型时，会报错，因此一般使用String类型来接收参数，后台处理时判断此字符串是否为纯数字来判断参数是否正确）	
+  -直接在方法的参数上指定一个对象参数，用于接收多个参数，会自动将参数封装成为一个对象
+  -直接在方法的参数上指定一个数组类型参数，用于接收多个值，(String[] name)
+  
+  -接收日期类型数据
+  
+9-bean中的实体也要写注释
+
+10-用json向前端绑定数据，与ajax在前端交互，向前台的ajax返回一个json串
+11-json包导入(json转换成串的包)
+	在Maven工程中的pom.xml文件中添加
+---------------------------------------------
+<dependency>
+  <groupId>org.codehaus.jackson</groupId>
+  <artifactId>jackson-core-asl</artifactId>
+  <version>1.9.13</version>
+</dependency>
+<dependency>
+  <groupId>org.codehaus.jackson</groupId>
+  <artifactId>jackson-core-lgpl</artifactId>
+  <version>1.9.13</version>
+</dependency>
+<dependency>
+  <groupId>org.codehaus.jackson</groupId>
+  <artifactId>jackson-mapper-asl</artifactId>
+  <version>1.9.13</version>
+</dependency>
+<dependency>
+  <groupId>org.codehaus.jackson</groupId>
+  <artifactId>jackson-mapper-lgpl</artifactId>
+  <version>1.9.13</version>
+</dependency>
+---------------------------------------------------  
+
+12-注解 @ResponseBody,表示该方法的返回结果直接写入HTTP response body中。 
+13-response.setStatus(202);设定返回时的状态值
+   //在360浏览器中，按F12，中的Network查看状态值
+
+-google浏览器PSOTMAN插件
+14-向页面绑定数据方式
+  3种方式
+	-返回ModelAndView("home",map)对象 方式
+	-通过Map参数；map.put("u", user)return "home";方式
+	-通过Model参数；model.addaddAttribute("u", user);return "home";方式
+	-model可以向页面绑定多个实体对象
+
+15-页面跳转
+-跳绝对URL，return "redirect:http://www.baidu.com";
+-跳本Controller内方法
+-跳其他Controller内方法
+
+-------自己做的------
+16-mybatis,spring mvc 整合
+	所谓mybatis与spring mvc 集成，就是mapper.xml与config.xml的配置
+17-创建数据库（用pd语句去sqlserver创建）
+
+18- servlet-config.xml文件中
+<beans:beans 
+xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd		
+	http://www.springframework.org/schema/context 
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/mvc 
+	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+
+<!-- 静态资源访问（不拦截此目录下的东西的访问） -->
+<mvc:resources location="/resources/" mapping="/resources/**" />
+
+19-<form>表单的action="test" test为注解中value="/test"去掉"/"
+20-web.xml里面设置首页
+	<welcome-file-list>
+		<welcome-file>/WEB-INF/views/home.jsp</welcome-file>
+	</welcome-file-list>
+
+21-通过Model参数；model.addaddAttribute("u", user);return "home";方式
+	前端页面的数据的name值与实体bean中的属性值对应，会自动生成一个对象，该对象拥有传到后台的值
+	
+-------------
+window-show view 可以找到窗口
+或者最左侧边栏
+-指定tomcat服务器-右键左下角servers-new-可以新建一个server-找到Apache-找路径
+
+
+--JAVA 类名.class是什么意思？
+http://zhidao.baidu.com/link?url=K6ah1TO3HZbX3P6aek-RSgK11uUOaBkqdwdf8-iLliticjRR-3kqGlVt5pEpEcVka42DXbj3dDVlDV2UEgASj_
+
+--java反射
+http://www.cnblogs.com/rollenholt/archive/2011/09/02/2163758.html
+
+--Copy Qulified Name 
+	一种取xx.xx.xx路径，一种取/xx/xx/xx的路径
+
+--sts 右下角 的Building WorkSpace可以查看正在现在下载的东西
+--控制台的Progress里面也可以查看正在现在下载的东西
+
+--google浏览器PSOTMAN插件的使用
+
+--webinfo下的东西不能直接被访问，只能通过内部配置
+
+--ctrl + alt + 上/下，复制当前行到上或下方
+--alt + 上/下，当前行与上/下方的行换位置
+--delete 键，将当前光标所在位置的后一个字符删掉
+--Backspace,将当前光标所在位置的前一个字符删掉
+
+--当<dependency>
+  		<groupId>cn.gyyx.core</groupId>
+  		<artifactId>utility</artifactId>
+  		<version>0.1</version>  
+	</dependency>
+	无法导入包时，向别人找jar包，解压，然后放到.m2仓库的对应位置，然后refresh即可
+
+-------------
+
+</pre>
+
+				</div >	
+				
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

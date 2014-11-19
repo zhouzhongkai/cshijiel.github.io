@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014-11-14</font></h1>
+					<font color="red" size="4">mybatis 学习小结</font><br />
+<pre>
+2014-11-14
+
+百度搜 mybatis--最下方mybatis.org docs-选择简体中文
+
+(第1课.MOV)
+	1，创建.m2 仓库，并将setting.xml配置文件复制到.m2仓库中。
+	2，进入STS后，配置Maven仓库地址
+	3，创建Spring project，创建工程名ui，包名cn.gyyx.test.zhaozhu
+	4，配置注释模板，window-preference-java-code style-code templates--code-new java files-edit-
+	         也可在新建class文件时，点here进入设置
+	5，修改 jre版本，右键工程名-properties-java build path-libraries-JRE..-edit-jre1.7
+	   修改工程编码-右键工程-Generral-Workspace-Text file encoding-other:UTF-8
+	6，建立maven-file-new-other-maven-maven project-quickstart
+	   在maven中的src/main/java 下的service包中新建Number.java文件用于测试
+	7，修改 jre版本，右键工程名-properties-java build path-libraries-JRE..-edit-jre1.7
+	   修改工程编码-右键工程-Generral-Workspace-Text file encoding-other:UTF-8
+	8，ui工程的src是web工程的目录，包括jsp,web.xml等
+	9，修改ui中的pom.xml ，在<!--test-->下面添加Maven工程中pom.xml的信息
+	
+	(第2课.MOV)
+	10，ui的src/main/java下的test包的HomeController.java中测试Number.java
+		引maven中的包含Number.java包，import cn.gyyx.test.zhaozhu.service.Number;
+		然后Number num = new Number();
+			logger.info("add :" + num.add(1, 2));
+		运行，在-控制台-看结果是否正确。
+	11，jar包调用-打开私有仓库页面-找到需要的jar包-复制maven下的xml框中的代码-
+		-粘贴到maven工程的业务中（即粘贴到<dependency></dependency>标签下）-
+		-然后jar包会自动下载到maven工程的Maven Dependencies文件下-现在可以使用这个jar包了
+	12，打jar包，右键maven工程-Run as-Maven install-
+	13，上传-打开私有仓库页面-选择一个仓库（这里选第三方仓库）-Artifact Upload-
+		GAV Definition：From POM-Select POM to Upload-选择Maven工程下的pom文件
+		Select Artifact to Upload-Maven工程-target-上一步打好的jar包
+	
+	14-mybatis支持sqlserver
+	   -私有仓库搜索microsoft，找到microsoft.sqlserver，调用jdbc.jar，调用方法看 第11条，
+	   -创建config.xml文件--创建位置，spring mvc（ui）工程中的src/mian/resources下，新建
+	   一个package，名为mybatis-在mabatis中新建jdbc的config.xml file文件-next-create xml file from a xml templates 
+	   -config.xml的讲解，配置-粘代码
+	   -User.xml 的作用，配置-粘代码
+	   -引mybatis的jar包-同样是在maven的pom.xml中-方法同第11条
+	   -在maven工程src/main/java下建cn.gyyx.test.zhaozhu.dao包-建MyBatisConnectionFactory.java-粘代码
+	   -在maven工程src/main/java下建cn.gyyx.test.zhaozhu.beans包-实体包
+	   
+	  15-mybatis学习
+		-从xml中构建SqlSessionFactory
+		-mybatis-config.xml-xml配置文件包含对Mybatis系统的核心设置，包含获取数据库连接实例的数据源和决定事务范围和控制事务管理器。
+		-构建一个简单的Mapper文件
+		-动态sql
+		
+----config文件配置去哪找？---sqljdbc_4.0.2206.100_chs中	  
+ 
+</pre>
+				</div >	
+				
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>GitHub</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+	<style type="text/css">
+		.chen-link-index>a{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12">
+				<!--begin-->
+				
+				<div class="item">
+					<h1>赵柱 <font color="green" size="4">2014-11-13</font></h1>
+					<font color="red" size="4">mybatis 学习小结</font><br />
+<pre>
+2014-11-13
+
+1--mybatis
+   -mybatis是支持普通SQL查询，存储过程和高级映射的持久层框架。
+   -传送门：百度百科MyBatis概念，http://baike.baidu.com/view/4372646.htm?fr=aladdin
+   -简介与学习
+	传送门1-http://blog.csdn.net/jbgtwang/article/details/7307700
+	传送门2-视频教程 http://edu.51cto.com/course/course_id-1354-page-1.html
+	
+	15-定义操作users 表的sql 映射文件userMapper.xml
+	-1，User类中
+	-alt+shift+s Generate Construtor using Fields
+	-alt+shift+s get/set方法
+	-alt+shift+s toString()
+	-2，配置user的mapper.xml文件
+	-namespace必须唯一，用包名+文件名
+	-结果类型-resultType="UserInfo类的全路径" ，快速获取UserInfo类的全路径的方法，选中类名，右键，Copy Qualifiled Name
+	-3，在conf.xml 文件中注册userMapper.xml 文件
+	-往.xml文件中导入DTD文件，DTD文件是xml的提示文件
+		preference-搜索xml-xml Catalog-add-loaction找到文件-PUBLIC ID写xml头部的-//mybatis.org//DTD Config 3.0//EN即可
+	<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	-mapper中resource属性="main/resources/mabatis/User.xml" (将src以及之前的路径去掉)
+	-4，编写测试代码：执行定义的select 语句
+	
+2--velocity [英]/və'lɒsətɪ/
+	-Java模板引擎
+	Velocity是一个基于java的模板引擎（template engine）。它允许任何人仅仅使用简单的模板语言（template language）来引用由java代码定义的对象。
+	-velocity配置
+	传送门1-http://blog.sina.com.cn/s/blog_484d87770100073f.html
+	传送门2-http://blog.csdn.net/msg_java2011/article/details/6564342
+	传送门3-http://www.cnblogs.com/hongten/archive/2013/03/09/hongten_apache_velocity.html
+	第三个比较好
+
+</pre>
+				</div >	
+				
+				<!--end-->
+			</div>
+		</div>
+	</div>
+	
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
