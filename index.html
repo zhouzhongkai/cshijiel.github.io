@@ -7,8 +7,11 @@
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
 	<link rel="icon" type="image/x-icon" href="http://cshijiel.github.io/favicon.ico" />
 	<style type="text/css">
-		.chen-link-index>a{
-			display: block;
+		.chen-link-index{
+			min-width: 374px;
+		}
+		.chen-link-index>.list-group>.list-group-item>a{
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -17,41 +20,53 @@
 	<div class="row">
 		<div class="col-xs-12">
 			<!--begin-->
-			<div class="item chen-link-index">
-				<h1>陈鹏</h1>
-				<!--
-                <p class="lead">整个过程：</p>
-                <ol>
-                    <li>在本地创建git版本库</li>
-                    <li>在github上创建空库，类似于username.github.io</li>
-                    <li>
-                        在本地创建ssh-keygen，如下:<br>
-                        <pre>ssh-keygen -t rsa -C "user.email"</pre>
-                        得到ssh-key后填入github.com,<br>
-                        验证:<br>
-                        <pre>ssh -T git@github.com</pre>
-                    </li>
-                    <li>在本地执行<pre>git clone ...</pre>克隆整个项目</li>
-                    <li>在本地编辑修改/增加 <code>index.html</code>文件，</li>
-                    <li>提交<pre>git push origin master</pre></li>
-                    <li>
-                        以后更新先使用
-                        <pre>git fetch origin master</pre>
-                        <pre>git pull origin master</pre>
-                        然后本地编辑修改提交后再<code>push</code>到远程库
-                    </li>
-                </ol>
-                <a href="http://blog.csdn.net/hudashi/article/details/7664457" class="btn btn-primary" target="_blank">Git fetch和git pull的区别</a>
-                <a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/http-json-rest.md" class="btn btn-primary" target="_blank">新的内容（MarkDown尝试）</a>
-                -->
-				<a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/git.md" target="_blank">Git学习</a>
-				<a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/http-json-rest.md" target="_blank">HTTP协议，REST和JSON</a>
-				<a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/DataBase.md" target="_blank">数据库设计的零星整理</a>
-				<a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/Login-while-MemCached.md" target="_blank"> UML建模 时序图-Sequence Diagram-带有MemCached的登录过程</a>
+			<div class="row">
+				<div class="col-xs-5">
+					<div class="item chen-link-index">
+						<h1>陈鹏</h1>
+						<!--
+                        <p class="lead">整个过程：</p>
+                        <ol>
+                            <li>在本地创建git版本库</li>
+                            <li>在github上创建空库，类似于username.github.io</li>
+                            <li>
+                                在本地创建ssh-keygen，如下:<br>
+                                <pre>ssh-keygen -t rsa -C "user.email"</pre>
+                                得到ssh-key后填入github.com,<br>
+                                验证:<br>
+                                <pre>ssh -T git@github.com</pre>
+                            </li>
+                            <li>在本地执行<pre>git clone ...</pre>克隆整个项目</li>
+                            <li>在本地编辑修改/增加 <code>index.html</code>文件，</li>
+                            <li>提交<pre>git push origin master</pre></li>
+                            <li>
+                                以后更新先使用
+                                <pre>git fetch origin master</pre>
+                                <pre>git pull origin master</pre>
+                                然后本地编辑修改提交后再<code>push</code>到远程库
+                            </li>
+                        </ol>
+                        <a href="http://blog.csdn.net/hudashi/article/details/7664457" class="btn btn-primary" target="_blank">Git fetch和git pull的区别</a>
+                        <a href="https://github.com/cshijiel/cshijiel.github.io/blob/master/roc/http-json-rest.md" class="btn btn-primary" target="_blank">新的内容（MarkDown尝试）</a>
+                        -->
+						<ul class="list-group">
+							<li class="list-group-item list-group-item-info">
+								<span class="badge">7</span>
+								<a href="https://github.com/cshijiel/cshijiel.github.io/tree/master/roc">
+									<span class="glyphicon glyphicon-calendar"></span>日报系统
+								</a>
+							</li>
+							<li class="list-group-item list-group-item-warning">
+								<span class="badge">1</span>
+								<a href="https://github.com/cshijiel/cshijiel.github.io/tree/master/roc">
+									<span class="glyphicon glyphicon-cloud"></span>Demo项目（SpringMVC,Spring,MyBatis）
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
-
-
-
+			<hr>
 			<!--end-->
 
 			<!--begin-->
